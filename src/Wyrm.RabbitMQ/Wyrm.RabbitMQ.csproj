@@ -5,6 +5,13 @@
     <Nullable Condition="'$(TargetFramework)'=='netcoreapp3.0'">enable</Nullable>
     <RootNamespace>Wyrm.RabbitMq.Extentions.DependencyInjection</RootNamespace>
     <AssemblyName>Wyrm.RabbitMQ</AssemblyName>
+    <PackageId>Wyrm.RabbitMQ</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dan Chenier</Authors>
+    <PackageDescription>RabbitMQ provider for Wyrm</PackageDescription>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>distributed;microservices;rabbitmq</PackageTags>
+    <RepositoryUrl>https://github.com/dchenier/wyrm</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
