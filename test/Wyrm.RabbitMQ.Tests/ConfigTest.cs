@@ -17,7 +17,7 @@ namespace Wyrm.RabbitMQ.Tests
         [Test]
         public void TaskQueueTest()
         {
-            var consumer = new ConsumerService();
+            var consumer = new ConsumerService<string>();
 
             var app = Host.CreateDefaultBuilder()
                 .ConfigureServices(services =>

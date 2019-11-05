@@ -10,13 +10,18 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static WyrmOptionsBuilder UseRabbitMq(
             this WyrmOptionsBuilder optionsBuilder,
-            string host)
+            string host,
+            int? port = null)
         {
             optionsBuilder.Services.AddSingleton<QueueListenerHostedServiceFactory>();
             optionsBuilder.Services.Configure<QueueServiceOptions>(queueOptions => 
             {
                 if (!string.IsNullOrWhiteSpace(host))
-                   queueOptions.ServiceBusHostName = host; 
+                   queueOptions.ServiceBusHostName = host;
+                if (port.HasValue)
+                {
+                    queueOptions.ServiceBusPort = port.Value;
+                }
             });
             optionsBuilder.Services.AddSingleton<QueueServiceFactory>();
             optionsBuilder.Services.AddTransient<IQueueService, QueueService>();
